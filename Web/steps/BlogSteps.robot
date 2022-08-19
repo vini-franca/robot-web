@@ -1,6 +1,7 @@
 *** Settings ***
 Library     SeleniumLibrary
 Resource    ../pages/BlogPage.robot
+Resource    ../resources/config.robot
 
 *** Keywords ***
 #### DADO

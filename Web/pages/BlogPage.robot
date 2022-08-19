@@ -1,6 +1,4 @@
 *** Variable ***
-${BROWSER}              chrome
-${URL}                  https://robotizandotestes.blogspot.com.br/
 ${CABEÇALHO}            id=Header1
 ${BOTAO_LUPA}           css=.search-expand.touch-icon-button
 ${CAMPO_PESQUISAR}      css=.search-input>input

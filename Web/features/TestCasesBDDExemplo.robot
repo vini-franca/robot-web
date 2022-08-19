@@ -1,6 +1,7 @@
 *** Settings ***
-Resource         ../resources/ResourceBDD.robot
+Resource         ../steps/blogSteps.robot
 Resource         ../resources/BDDpt-br.robot
+
 Suite Teardown   Fechar Navegador
 
 *** Test Cases ***
