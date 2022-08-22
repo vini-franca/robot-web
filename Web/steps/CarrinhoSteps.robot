@@ -14,7 +14,7 @@ Que esteja na tela HOME do site Demo Web Shop
 #### E
 Faço login com minhas credenciais
     Click Element                   ${BOTAO_LOGIN}
-    Input Text                      ${CAMPO_EMAIL}          roberto.justuss@gmail.com
+    Input Text                      ${CAMPO_EMAIL}          sergio.ramos@gmail.com
     Input Text                      ${CAMPO_PASSWORD}       teste123
     Click Element                   ${BOTAO_SUBMIT_LOGIN}
 

@@ -15,7 +15,7 @@ Cenário 02: Fazer login com dados válidos
     Dado que esteja na tela HOME do site Demo Web Shop
     E clico em Login
     Quando envio meu usuário e senha
-    Entao devo visualizar "roberto.justuss@gmail.com" no cabeçalho
+    Entao devo visualizar "sergio.ramos@gmail.com" no cabeçalho
 
 Cenário 03: Cadastrar email na Newsletter
     Dado que esteja na tela HOME do site Demo Web Shop
