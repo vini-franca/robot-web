@@ -1,3 +1,3 @@
 *** Variable ***
 ${BROWSER}              chrome
-${URL}                  https://robotizandotestes.blogspot.com.br/
+${URL}                  http://demowebshop.tricentis.com/
