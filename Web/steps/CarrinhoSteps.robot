@@ -19,7 +19,21 @@ Faço login com minhas credenciais
     Click Element                   ${BOTAO_SUBMIT_LOGIN}
 
 Clico em add to cart
-     Click Element                   ${BOTAO_ADD_CART}
+     Click Element                  ${BOTAO_ADD_CART}
+
+Seleciono todos os produtos
+    Select Checkbox                 ${CHECKBOX_REMOVE_PC}
+    Select Checkbox                 ${CHECKBOX_REMOVE_BOOK}
+    Select Checkbox                 ${CHECKBOX_REMOVE_CELL}
+    Select Checkbox                 ${CHECKBOX_REMOVE_SHOES}
+    Select Checkbox                 ${CHECKBOX_REMOVE_JEANS}
+    Select Checkbox                 ${CHECKBOX_REMOVE_DIGITAL}
+    Select Checkbox                 ${CHECKBOX_REMOVE_JEWELRY}
+    Select Checkbox                 ${CHECKBOX_REMOVE_GIFT}
+
+
+Clico em Update shopping cart
+    Click Element                    ${BOTAO_UPDATE_CART}
 
 #### QUANDO
 Seleciono um computador
@@ -61,6 +75,8 @@ Seleciono um gift card
     Input Text                      ${NOME_DESTINATARIO}        Isabella
     Input Text                      ${MENSAGEM_GIFT}            Teste QA - 2022
 
+Vou até Shoping cart
+    Click Element                   ${BOTAO_SHOPPING_CART}
 
 
 
@@ -68,6 +84,8 @@ Seleciono um gift card
 Devo receber a mensagem "${CARRINHO_MSG}"
     Wait Until Page Contains        ${CARRINHO_MSG}
 
+Devo visualizar a mensagem "${CARRINHO_VAZIO}"
+    Page Should Contain             ${CARRINHO_VAZIO}
 
 #### TEARDOWN
 Fechar Navegador

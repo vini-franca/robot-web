@@ -53,3 +53,11 @@ Cenário 07: Adicionar gift cards
     Quando seleciono um gift card
     E clico em add to cart
     Entao devo receber a mensagem "The product has been added to your shopping cart"
+
+Cenário 08: Limpar carrinho
+    Dado que esteja na tela HOME do site Demo Web Shop
+    E faço login com minhas credenciais
+    Quando vou até Shoping cart
+    E seleciono todos os produtos
+    E clico em Update shopping cart
+    Entao devo visualizar a mensagem "Your Shopping Cart is empty!"
