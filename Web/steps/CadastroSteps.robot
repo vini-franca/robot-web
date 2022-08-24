@@ -22,22 +22,22 @@ Clico em Log out
     Click Element                   ${BOTAO_LOGOUT}
 
 Preencho meu email no campo newsletter
-    Input Text                      ${CAMPO_NEWSLETTER}        sergio.ramos@gmail.com
+    Input Text                      ${CAMPO_NEWSLETTER}        lazaro.ramos@gmail.com
     Click Element                   ${BOTAO_SUBSCRIBE}
 
 #### QUANDO
 Envio o formulário
     Click Element                   ${BOTAO_REGISTER}
     Click Element                   ${BOTAO_GENDER}
-    Input Text                      ${CAMPO_FIRSTNAME}          Sergio
+    Input Text                      ${CAMPO_FIRSTNAME}          Cassio
     Input Text                      ${CAMPO_LASTNAME}           Ramos
-    Input Text                      ${CAMPO_EMAIL}              sergio.ramos@gmail.com
+    Input Text                      ${CAMPO_EMAIL}              lazaro.ramos@gmail.com
     Input Text                      ${CAMPO_PASSWORD}           teste123
     Input Text                      ${CAMPO_PASSWORD2}          teste123
     Click Element                   ${BOTAO_SUBMIT_REGISTER}
 
 Envio meu usuário e senha
-    Input Text                      ${CAMPO_EMAIL}              sergio.ramos@gmail.com
+    Input Text                      ${CAMPO_EMAIL}              lazaro.ramos@gmail.com
     Input Text                      ${CAMPO_PASSWORD}           teste123
     Click Element                   ${BOTAO_SUBMIT_LOGIN}
 
@@ -56,4 +56,4 @@ Devo visualizar a opção Login no cabeçalho
 
 #### TEARDOWN
 Fechar Navegador
-    Close All Browsers
+    Close Browser

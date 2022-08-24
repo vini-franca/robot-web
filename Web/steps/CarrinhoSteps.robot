@@ -1,7 +1,7 @@
 *** Settings ***
-Library     SeleniumLibrary
-Resource    ../pages/CarrinhoPage.robot
-Resource    ../resources/config.robot
+Library         SeleniumLibrary
+Resource        ../pages/CarrinhoPage.robot
+Resource        ../resources/config.robot
 
 *** Keywords ***
 #### DADO
@@ -14,7 +14,7 @@ Que esteja na tela HOME do site Demo Web Shop
 #### E
 Faço login com minhas credenciais
     Click Element                   ${BOTAO_LOGIN}
-    Input Text                      ${CAMPO_EMAIL}          sergio.ramos@gmail.com
+    Input Text                      ${CAMPO_EMAIL}          cassio.ramos@gmail.com
     Input Text                      ${CAMPO_PASSWORD}       teste123
     Click Element                   ${BOTAO_SUBMIT_LOGIN}
 
@@ -89,4 +89,4 @@ Devo visualizar a mensagem "${CARRINHO_VAZIO}"
 
 #### TEARDOWN
 Fechar Navegador
-    Close All Browsers
+    Close Browser

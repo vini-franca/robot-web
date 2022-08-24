@@ -2,7 +2,7 @@
 Resource         ../steps/CheckoutSteps.robot
 Resource         ../resources/BDDpt-br.robot
 
-Suite Teardown   Fechar Navegador
+Test Teardown   Fechar Navegador
 
 *** Test Cases ***
 Cenário 01: Finalizar compra com pagamento em dinheiro
