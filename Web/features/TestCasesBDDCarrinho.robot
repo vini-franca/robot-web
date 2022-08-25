@@ -1,7 +1,7 @@
 *** Settings ***
 Resource         ../steps/CarrinhoSteps.robot
 Resource         ../resources/BDDpt-br.robot
-Test Teardown   Fechar Navegador
+Test Teardown    Fechar Navegador
 
 *** Test Cases ***
 Cenário 01: Adicionar um computador

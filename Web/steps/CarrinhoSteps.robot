@@ -1,7 +1,8 @@
 *** Settings ***
-Library         SeleniumLibrary
-Resource        ../pages/CarrinhoPage.robot
-Resource        ../resources/config.robot
+Library        SeleniumLibrary
+Resource       ../pages/CarrinhoPage.robot
+Resource       ../resources/config.robot
+Resource       ../pages/DadosUserPage.robot
 
 *** Keywords ***
 #### DADO
@@ -14,8 +15,8 @@ Que esteja na tela HOME do site Demo Web Shop
 #### E
 Faço login com minhas credenciais
     Click Element                   ${BOTAO_LOGIN}
-    Input Text                      ${CAMPO_EMAIL}          cassio.ramos@gmail.com
-    Input Text                      ${CAMPO_PASSWORD}       teste123
+    Input Text                      ${CAMPO_EMAIL}              ${USER_EMAIL}
+    Input Text                      ${CAMPO_PASSWORD}           ${USER_PASSWORD}
     Click Element                   ${BOTAO_SUBMIT_LOGIN}
 
 Clico em add to cart
@@ -33,7 +34,7 @@ Seleciono todos os produtos
 
 
 Clico em Update shopping cart
-    Click Element                    ${BOTAO_UPDATE_CART}
+    Click Element                   ${BOTAO_UPDATE_CART}
 
 #### QUANDO
 Seleciono um computador
@@ -86,6 +87,10 @@ Devo receber a mensagem "${CARRINHO_MSG}"
 
 Devo visualizar a mensagem "${CARRINHO_VAZIO}"
     Page Should Contain             ${CARRINHO_VAZIO}
+
+
+
+
 
 #### TEARDOWN
 Fechar Navegador
