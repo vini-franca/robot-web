@@ -127,3 +127,17 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Ignorar pastas
+.idea/
+.vscode/
+log/
+pabot_results/
+
+# Ignorar arquivos individuais
+log.html
+output.xml
+report.html
+
+# Ignorar todos os arquivos começando com "selenium-screenshot-"
+selenium-screenshot-*

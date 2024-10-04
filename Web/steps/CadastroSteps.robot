@@ -1,39 +1,39 @@
 *** Settings ***
-Library     SeleniumLibrary
-Resource    ../pages/CadastroPage.robot
-Resource    ../pages/DadosUserPage.robot
 Resource    ../resources/config.robot
 
 *** Keywords ***
 #### DADO
-Que esteja na tela HOME do site Demo Web Shop
-    Open Browser                    ${URL}  ${BROWSER}
+Dado que esteja na tela HOME do site Demo Web Shop
+    ${chromedriver_path}=    Setup Chromedriver
+    Open Browser    ${URL}    Chrome    executable_path=${chromedriver_path}
     Maximize Browser Window
     Wait Until Element Is Visible   ${CABEÇALHO}
     Title Should Be                 Demo Web Shop
 
 #### E
-Vou até a página de endereços
+E vou até a página de endereços
     Go To                           ${URL}/customer/addresses
 
-Clico em Add new
+E clico em Add new
     Click Element                   ${BOTAO_ADD}
 
-Clico em Register
+E clico em Register
     Click Element                   ${BOTAO_REGISTER}
 
-Clico em Login
+E clico em Login
      Click Element                  ${BOTAO_LOGIN}
      
-Clico em Log out
+E clico em Log out
     Click Element                   ${BOTAO_LOGOUT}
 
-Preencho meu email no campo newsletter
+E preencho meu email no campo newsletter
     Input Text                      ${CAMPO_NEWSLETTER}        ${USER_EMAIL}
     Click Element                   ${BOTAO_SUBSCRIBE}
+    Scroll Element Into View        locator
+    Set Focus To Element    locator
 
 #### QUANDO
-Envio o formulário
+Quando envio o formulário
     Click Element                   ${BOTAO_REGISTER}
     Click Element                   ${BOTAO_GENDER}
     Input Text                      ${CAMPO_FIRSTNAME}          ${USER_FIRSTNAME}
@@ -43,7 +43,7 @@ Envio o formulário
     Input Text                      ${CAMPO_PASSWORD2}          ${USER_PASSWORD2}
     Click Element                   ${BOTAO_SUBMIT_REGISTER}
 
-Envio o formulário com meus dados
+Quando envio o formulário com meus dados
     Input Text                      ${CAMPO_FIRSTNAME_ADDRESS}   ${USER_FIRSTNAME}
     Input Text                      ${CAMPO_LASTNAME_ADDRESS}    ${USER_LASTNAME}
     Input Text                      ${CAMPO_EMAIL_ADDRESS}       ${USER_EMAIL}
@@ -54,26 +54,23 @@ Envio o formulário com meus dados
     Input Text                      ${CAMPO_ZIP}                 ${USER_ZIP}
     Click Element                   ${BOTAO_SUBMIT_ADDRESS}
 
-Envio meu usuário e senha
+Quando envio meu usuário e senha
     Input Text                      ${CAMPO_EMAIL}              ${USER_EMAIL}
     Input Text                      ${CAMPO_PASSWORD}           ${USER_PASSWORD}
     Click Element                   ${BOTAO_SUBMIT_LOGIN}
 
 #### ENTÃO
-Devo receber a mensagem "${CADASTRO_MSG}"
-    Page Should Contain             ${CADASTRO_MSG}
-
-Devo visualizar "${CONFIRM_LOGIN}" no cabeçalho
+Então Devo visualizar "${CONFIRM_LOGIN}" no cabeçalho
     Page Should Contain             ${CONFIRM_LOGIN}
 
-Devo visualizar uma mensagem "${NEWSLETTER_MSG}"
-    Wait Until Page Contains        ${NEWSLETTER_MSG}
+Então devo visualizar uma mensagem "Thank you for signing up!"
+    Wait Until Page Contains        Thank you for signing up!
 
-Devo visualizar a opção Login no cabeçalho
+Então devo visualizar a opção Login no cabeçalho
     Wait Until Element Is Visible    ${BOTAO_LOGIN}
 
-Devo visualizar o título "${ENDERECO_MSG}"
-    Page Should Contain             ${ENDERECO_MSG}
+Então devo visualizar o título "My account - Addresses"
+    Page Should Contain         My account - Addresses
 
 #### TEARDOWN
 Fechar Navegador

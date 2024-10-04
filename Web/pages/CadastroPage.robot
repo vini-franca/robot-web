@@ -29,5 +29,6 @@ ${BOTAO_SUBSCRIBE}          id=newsletter-subscribe-button
 ${BOTAO_SUBMIT_LOGIN}       xpath=.//input[@value='Log in']
 ${BOTAO_SUBMIT_ADDRESS}     xpath=//input[@class='button-1 save-address-button']
 ${SELECT_COUNTRY}           xpath=.//select[@id='Address_CountryId']//option[2]
+${SPAN_EMAIL}               xpath=//span[@for='Email']
 
 

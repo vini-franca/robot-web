@@ -1,0 +1,8 @@
+robotframework
+robotframework-seleniumlibrary
+webdriver-manager
+robotframework-yamllibrary
+robotframework-datetime-tz
+robotframework-requests
+robotframework-faker
+setuptools

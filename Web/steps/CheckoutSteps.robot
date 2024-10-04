@@ -1,29 +1,15 @@
 *** Settings ***
-Library     SeleniumLibrary
-Resource    ../pages/CheckoutPage.robot
-Resource    ../resources/config.robot
-Resource    ../pages/DadosUserPage.robot
 
+Resource    ../resources/config.robot
 
 *** Keywords ***
 #### DADO
-Que esteja na tela HOME do site Demo Web Shop
-    Open Browser                    ${URL}  ${BROWSER}
-    Maximize Browser Window
-    Wait Until Element Is Visible   ${CABEÇALHO}
-    Title Should Be                 Demo Web Shop
 
 #### E
-Faço login com minhas credenciais
-    Click Element                   ${BOTAO_LOGIN}
-    Input Text                      ${CAMPO_EMAIL}              ${USER_EMAIL}
-    Input Text                      ${CAMPO_PASSWORD}           ${USER_PASSWORD}
-    Click Element                   ${BOTAO_SUBMIT_LOGIN}
-
-Clico em Shopping cart
+E clico em Shopping cart
     Click Element                   ${BOTAO_SHOPPING_CART}
 
-Configuro os dados para finalizar a compra
+E configuro os dados para finalizar a compra
     Select Checkbox                 ${CHECKBOX_TERMS}
     Click Element                   ${BOTAO_CHECKOUT}
     Click Element                   ${BOTAO_CONTINUE_ADDRESS}
@@ -41,7 +27,7 @@ Configuro os dados para finalizar a compra
     Scroll Element Into View        ${BOTAO_CONFIRM}
     Click Element                   ${BOTAO_CONFIRM}
 
-Configuro os dados para realizar a compra por cheque
+E configuro os dados para realizar a compra por cheque
     Select Checkbox                 ${CHECKBOX_TERMS}
     Click Element                   ${BOTAO_CHECKOUT}
     Sleep                           3s
@@ -62,7 +48,7 @@ Configuro os dados para realizar a compra por cheque
     Scroll Element Into View        ${BOTAO_CONFIRM}
     Click Element                   ${BOTAO_CONFIRM}
 
-Configuro os dados para realizar a compra por cartão de crédito
+E configuro os dados para realizar a compra por cartão de crédito
     Select Checkbox                 ${CHECKBOX_TERMS}
     Click Element                   ${BOTAO_CHECKOUT}
     Sleep                           3s
@@ -85,7 +71,7 @@ Configuro os dados para realizar a compra por cartão de crédito
     Scroll Element Into View        ${BOTAO_CONFIRM}
     Click Element                   ${BOTAO_CONFIRM}
 
-Configuro os dados para realizar a compra por ordem de pagamento
+E configuro os dados para realizar a compra por ordem de pagamento
     Select Checkbox                 ${CHECKBOX_TERMS}
     Click Element                   ${BOTAO_CHECKOUT}
     Sleep                           3s
@@ -106,12 +92,10 @@ Configuro os dados para realizar a compra por ordem de pagamento
     Click Element                   ${BOTAO_CONFIRM}
 
 #### QUANDO
-Adiciono um PC ao carrinho
+Quando adiciono um PC ao carrinho
     Click Element                   ${SET_COMPUTADOR}
 
 #### ENTÃO
-Devo receber a mensagem "${CHECKOUT_MSG}"
-    Wait Until Page Contains        ${CHECKOUT_MSG}
 
 #### TEARDOWN
 Fechar Navegador
