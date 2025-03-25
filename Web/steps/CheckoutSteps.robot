@@ -7,93 +7,71 @@ Resource    ../resources/config.robot
 
 #### E
 E clico em Shopping cart
-    Click Element                   ${BOTAO_SHOPPING_CART}
+    Clicar no botão                   ${BOTAO_SHOPPING_CART}
 
 E configuro os dados para finalizar a compra
-    Select Checkbox                 ${CHECKBOX_TERMS}
-    Click Element                   ${BOTAO_CHECKOUT}
-    Click Element                   ${BOTAO_CONTINUE_ADDRESS}
-    Sleep                           3s
-    Click Element                   ${BOTAO_CONTINUE_SHIPPING}
-    Sleep                           3s
-    Click Element                   ${BOTAO_CONTINUE_METHOD}
-    Sleep                           3s
-    Scroll Element Into View        ${BOTAO_CONTINUE_PAYMENT}
-    Click Element                   ${BOTAO_CONTINUE_PAYMENT}
-    Sleep                           3s
-    Scroll Element Into View        ${BOTAO_CONTINUE_INFO}
-    Click Element                   ${BOTAO_CONTINUE_INFO}
-    Sleep                           3s
-    Scroll Element Into View        ${BOTAO_CONFIRM}
-    Click Element                   ${BOTAO_CONFIRM}
+    Select Checkbox                   ${CHECKBOX_TERMS}
+    Clicar no botão                   ${BOTAO_CHECKOUT}
+    Clicar no botão                   ${BOTAO_CONTINUE_ADDRESS}
+    Clicar no botão                   ${BOTAO_CONTINUE_SHIPPING}
+    Clicar no botão                   ${BOTAO_CONTINUE_METHOD}
+    Scroll Element Into View          ${BOTAO_CONTINUE_PAYMENT}
+    Clicar no botão                   ${BOTAO_CONTINUE_PAYMENT}
+    Scroll Element Into View          ${BOTAO_CONTINUE_INFO}
+    Clicar no botão                   ${BOTAO_CONTINUE_INFO}
+    Scroll Element Into View          ${BOTAO_CONFIRM}
+    Clicar no botão                   ${BOTAO_CONFIRM}
 
 E configuro os dados para realizar a compra por cheque
-    Select Checkbox                 ${CHECKBOX_TERMS}
-    Click Element                   ${BOTAO_CHECKOUT}
-    Sleep                           3s
-    Click Element                   ${BOTAO_CONTINUE_ADDRESS}
-    Sleep                           3s
-    Click Element                   ${BOTAO_CONTINUE_SHIPPING}
-    Sleep                           3s
-    Click Element                   ${BOTAO_CONTINUE_METHOD}
-    Sleep                           3s
-    Scroll Element Into View        ${SET_CHEQUE}
-    Click Element                   ${SET_CHEQUE}
-    Scroll Element Into View        ${BOTAO_CONTINUE_PAYMENT}
-    Click Element                   ${BOTAO_CONTINUE_PAYMENT}
-    Sleep                           3s
-    Scroll Element Into View        ${BOTAO_CONTINUE_INFO}
-    Click Element                   ${BOTAO_CONTINUE_INFO}
-    Sleep                           3s
-    Scroll Element Into View        ${BOTAO_CONFIRM}
-    Click Element                   ${BOTAO_CONFIRM}
+    Select Checkbox                   ${CHECKBOX_TERMS}
+    Clicar no botão                   ${BOTAO_CHECKOUT}
+    Clicar no botão                   ${BOTAO_CONTINUE_ADDRESS}
+    Clicar no botão                   ${BOTAO_CONTINUE_SHIPPING}
+    Clicar no botão                   ${BOTAO_CONTINUE_METHOD}
+    Scroll Element Into View          ${SET_CHEQUE}
+    Clicar no botão                   ${SET_CHEQUE}
+    Scroll Element Into View          ${BOTAO_CONTINUE_PAYMENT}
+    Clicar no botão                   ${BOTAO_CONTINUE_PAYMENT}
+    Scroll Element Into View          ${BOTAO_CONTINUE_INFO}
+    Clicar no botão                   ${BOTAO_CONTINUE_INFO}
+    Scroll Element Into View          ${BOTAO_CONFIRM}
+    Clicar no botão                   ${BOTAO_CONFIRM}
 
 E configuro os dados para realizar a compra por cartão de crédito
+    ${NOME_ALEATORIO}               FakerLibrary.Name
     Select Checkbox                 ${CHECKBOX_TERMS}
-    Click Element                   ${BOTAO_CHECKOUT}
-    Sleep                           3s
-    Click Element                   ${BOTAO_CONTINUE_ADDRESS}
-    Sleep                           3s
-    Click Element                   ${BOTAO_CONTINUE_SHIPPING}
-    Sleep                           3s
-    Click Element                   ${BOTAO_CONTINUE_METHOD}
-    Sleep                           3s
+    Clicar no botão                 ${BOTAO_CHECKOUT}
+    Clicar no botão                 ${BOTAO_CONTINUE_ADDRESS}
+    Clicar no botão                 ${BOTAO_CONTINUE_SHIPPING}
+    Clicar no botão                 ${BOTAO_CONTINUE_METHOD}
     Scroll Element Into View        ${SET_CREDITO}
-    Click Element                   ${SET_CREDITO}
+    Clicar no botão                 ${SET_CREDITO}
     Scroll Element Into View        ${BOTAO_CONTINUE_PAYMENT}
-    Click Element                   ${BOTAO_CONTINUE_PAYMENT}
-    Sleep                           3s
-    Input Text                      ${CAMPO_CARDHOLDER}           ${USER_FIRSTNAME} ${USER_LASTNAME}
-    Input Text                      ${CAMPO_CARDNUMBER}           ${USER_CARDNUMBER}
-    Input Text                      ${CAMPO_CARDCODE}             ${USER_CARDCODE}
-    Click Element                   ${BOTAO_CONTINUE_INFO}
-    Sleep                           3s
+    Clicar no botão                 ${BOTAO_CONTINUE_PAYMENT}
+    Inserir Texto                   ${CAMPO_CARDHOLDER}           ${NOME_ALEATORIO}
+    Inserir Texto                   ${CAMPO_CARDNUMBER}           ${USER_CARDNUMBER}
+    Inserir Texto                   ${CAMPO_CARDCODE}             ${USER_CARDCODE}
+    Clicar no botão                 ${BOTAO_CONTINUE_INFO}
     Scroll Element Into View        ${BOTAO_CONFIRM}
-    Click Element                   ${BOTAO_CONFIRM}
+    Clicar no botão                 ${BOTAO_CONFIRM}
 
 E configuro os dados para realizar a compra por ordem de pagamento
-    Select Checkbox                 ${CHECKBOX_TERMS}
-    Click Element                   ${BOTAO_CHECKOUT}
-    Sleep                           3s
-    Click Element                   ${BOTAO_CONTINUE_ADDRESS}
-    Sleep                           3s
-    Click Element                   ${BOTAO_CONTINUE_SHIPPING}
-    Sleep                           3s
-    Click Element                   ${BOTAO_CONTINUE_METHOD}
-    Sleep                           3s
-    Scroll Element Into View        ${SET_ORDEMPGTO}
-    Click Element                   ${SET_ORDEMPGTO}
-    Scroll Element Into View        ${BOTAO_CONTINUE_PAYMENT}
-    Click Element                   ${BOTAO_CONTINUE_PAYMENT}
-    Sleep                           3s
-    Click Element                   ${BOTAO_CONTINUE_INFO}
-    Sleep                           3s
-    Scroll Element Into View        ${BOTAO_CONFIRM}
-    Click Element                   ${BOTAO_CONFIRM}
+    Select Checkbox                   ${CHECKBOX_TERMS}
+    Clicar no botão                   ${BOTAO_CHECKOUT}
+    Clicar no botão                   ${BOTAO_CONTINUE_ADDRESS}
+    Clicar no botão                   ${BOTAO_CONTINUE_SHIPPING}
+    Clicar no botão                   ${BOTAO_CONTINUE_METHOD}
+    Scroll Element Into View          ${SET_ORDEMPGTO}
+    Clicar no botão                   ${SET_ORDEMPGTO}
+    Scroll Element Into View          ${BOTAO_CONTINUE_PAYMENT}
+    Clicar no botão                   ${BOTAO_CONTINUE_PAYMENT}
+    Clicar no botão                   ${BOTAO_CONTINUE_INFO}
+    Scroll Element Into View          ${BOTAO_CONFIRM}
+    Clicar no botão                   ${BOTAO_CONFIRM}
 
 #### QUANDO
 Quando adiciono um PC ao carrinho
-    Click Element                   ${SET_COMPUTADOR}
+    Clicar no botão                   ${SET_COMPUTADOR}
 
 #### ENTÃO
 

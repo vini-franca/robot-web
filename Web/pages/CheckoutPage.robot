@@ -1,4 +1,4 @@
-*** Variable ***
+*** VariableS ***
 ${CABEÇALHO}                xpath=.//img[@alt='Tricentis Demo Web Shop']
 ${BOTAO_LOGIN}              class=ico-login
 ${CAMPO_EMAIL}              id=Email

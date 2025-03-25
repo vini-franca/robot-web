@@ -2,4 +2,10 @@ dados_usuario:
   nome: Vinicius
   sobrenome: França
   senha: teste123
-  email_masc: teste@testando.com.br
+  email_abdoul: abdoul.hamilek@teste.com
+  email_angela: angela.davis@test.com
+  email_corporativo: corporativo.adamm@test.com
+  cidade: Sao Paulo
+  endereco: Avenida dos Desesperados
+  telefone: 11987665432
+  cep: 04850220

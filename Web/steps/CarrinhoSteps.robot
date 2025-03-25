@@ -7,13 +7,13 @@ Resource       ../resources/config.robot
 #### E
 E Faço login com minhas credenciais
     [Arguments]                     ${EMAIL_USUARIO}    ${SENHA_USUARIO}
-    Click Element                   ${BOTAO_LOGIN}
-    Input Text                      ${CAMPO_EMAIL}              ${EMAIL_USUARIO}
-    Input Text                      ${CAMPO_PASSWORD}           ${SENHA_USUARIO}
-    Click Element                   ${BOTAO_SUBMIT_LOGIN}
+    Clicar no botão                 ${BOTAO_LOGIN}
+    Inserir Texto                   ${CAMPO_EMAIL}              ${EMAIL_USUARIO}
+    Inserir Texto                   ${CAMPO_PASSWORD}           ${SENHA_USUARIO}
+    Clicar no botão                 ${BOTAO_SUBMIT_LOGIN}
 
 E Clico em add to cart
-     Click Element                  ${BOTAO_ADD_CART}
+     Clicar no botão                  ${BOTAO_ADD_CART}
 
 E Seleciono todos os produtos
     Select Checkbox                 ${CHECKBOX_REMOVE_PC}
@@ -27,50 +27,50 @@ E Seleciono todos os produtos
 
 
 E clico em Update shopping cart
-    Click Element                   ${BOTAO_UPDATE_CART}
+    Clicar no botão                   ${BOTAO_UPDATE_CART}
 
 #### QUANDO
 Quando seleciono um computador
-    Click Element                   ${BOTAO_COMPUTER}
-    Click Element                   ${BOTAO_DESKTOPS}
-    Click Element                   ${SET_COMPUTADOR}
+    Clicar no botão                   ${BOTAO_COMPUTER}
+    Clicar no botão                   ${BOTAO_DESKTOPS}
+    Clicar no botão                   ${SET_COMPUTADOR}
 
 Quando seleciono um livro
-    Click Element                   ${BOTAO_BOOKS}
-    Click Element                   ${SET_BOOK}
+    Clicar no botão                   ${BOTAO_BOOKS}
+    Clicar no botão                   ${SET_BOOK}
 
 Quando seleciono um celular
-    Click Element                   ${BOTAO_ELETRONICS}
-    Click Element                   ${BOTAO_CELLPHONES}
-    Click Element                   ${SET_SMARTPHONE}
+    Clicar no botão                   ${BOTAO_ELETRONICS}
+    Clicar no botão                   ${BOTAO_CELLPHONES}
+    Clicar no botão                   ${SET_SMARTPHONE}
 
 Quando seleciono peças de vestuário
-    Click Element                   ${BOTAO_APPAREL&SHOES}
-    Click Element                   ${SET_SHOES}
-    Click Element                   ${BOTAO_ADD_CART}
-    Click Element                   ${BOTAO_APPAREL&SHOES}
-    Click Element                   ${SET_JEANS}
+    Clicar no botão                   ${BOTAO_APPAREL&SHOES}
+    Clicar no botão                   ${SET_SHOES}
+    Clicar no botão                   ${BOTAO_ADD_CART}
+    Clicar no botão                   ${BOTAO_APPAREL&SHOES}
+    Clicar no botão                   ${SET_JEANS}
 
 Quando seleciono arquivo de download digital
-    Click Element                   ${BOTAO_DIGITAL_DOWNLOADS}
-    Click Element                   ${SET_ALBUM}
+    Clicar no botão                 ${BOTAO_DIGITAL_DOWNLOADS}
+    Clicar no botão                 ${SET_ALBUM}
     Clear Element Text              ${QTY_ALBUM}
-    Input Text                      ${QTY_ALBUM}                2
+    Inserir Texto                   ${QTY_ALBUM}                2
 
 Quando seleciono jóias
-    Click Element                   ${BOTAO_JEWELRY}
-    Click Element                   ${SET_JEWELRY}
-    Click Element                   ${SELECT_MATERIAL}
-    Input Text                      ${SELECT_LENGHT}            18
+    Clicar no botão                   ${BOTAO_JEWELRY}
+    Clicar no botão                   ${SET_JEWELRY}
+    Clicar no botão                   ${SELECT_MATERIAL}
+    Inserir Texto                     ${SELECT_LENGHT}            18
 
 Quando seleciono um gift card
-    Click Element                   ${BOTAO_GIFT_CARDS}
-    Click Element                   ${SET_GIFT_CARD}
-    Input Text                      ${NOME_DESTINATARIO}        Isabella
-    Input Text                      ${MENSAGEM_GIFT}            Teste QA - 2022
+    Clicar no botão                   ${BOTAO_GIFT_CARDS}
+    Clicar no botão                    ${SET_GIFT_CARD}
+    Inserir Texto                      ${NOME_DESTINATARIO}        Isabella
+    Inserir Texto                      ${MENSAGEM_GIFT}            Teste QA - 2022
 
 Quando vou até Shoping cart
-    Click Element                   ${BOTAO_SHOPPING_CART}
+    Clicar no botão                    ${BOTAO_SHOPPING_CART}
 
 #### ENTÃO
 

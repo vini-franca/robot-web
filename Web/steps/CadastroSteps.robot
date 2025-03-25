@@ -4,60 +4,61 @@ Resource    ../resources/config.robot
 *** Keywords ***
 #### DADO
 Dado que esteja na tela HOME do site Demo Web Shop
-    ${chromedriver_path}=    Setup Chromedriver
-    Open Browser    ${URL}    Chrome    executable_path=${chromedriver_path}
+    # ${chromedriver_path}=    Setup Chromedriver
+    # Create Webdriver    ${URL}   chrome    service=${chromedriver_path}
+    ${chromedriver_service}=    Setup Chromedriver
+    ${browser}=    Create Webdriver    Chrome    service=${chromedriver_service}
+    Go To    ${URL}
     Maximize Browser Window
     Wait Until Element Is Visible   ${CABEÇALHO}
     Title Should Be                 Demo Web Shop
 
 #### E
-E vou até a página de endereços
+E sigo o fluxo para cadastro de endereço
+    [Arguments]                     ${EMAIL_USUARIO}
     Go To                           ${URL}/customer/addresses
-
-E clico em Add new
-    Click Element                   ${BOTAO_ADD}
+    Clicar no botão                 ${BOTAO_ADD}
+    Inserir texto                   ${CAMPO_FIRSTNAME_ADDRESS}   ${dados_usuario.nome}
+    Inserir texto                   ${CAMPO_LASTNAME_ADDRESS}    ${dados_usuario.sobrenome}
+    Inserir texto                   ${CAMPO_EMAIL_ADDRESS}       ${EMAIL_USUARIO}
+    Clicar no botão                 ${SELECT_COUNTRY}
+    Inserir texto                   ${CAMPO_CITY}                ${dados_usuario.cidade}
+    Inserir texto                   ${CAMPO_ADDRESS}             ${dados_usuario.endereco}
+    Inserir texto                   ${CAMPO_PHONE}               ${dados_usuario.telefone}
+    Inserir texto                   ${CAMPO_ZIP}                 ${dados_usuario.cep}
+    Clicar no botão                 ${BOTAO_SUBMIT_ADDRESS}
 
 E clico em Register
-    Click Element                   ${BOTAO_REGISTER}
-
-E clico em Login
-     Click Element                  ${BOTAO_LOGIN}
+    Clicar no botão                   ${BOTAO_REGISTER}
      
 E clico em Log out
-    Click Element                   ${BOTAO_LOGOUT}
+    Clicar no botão                   ${BOTAO_LOGOUT}
 
 E preencho meu email no campo newsletter
-    Input Text                      ${CAMPO_NEWSLETTER}        ${USER_EMAIL}
-    Click Element                   ${BOTAO_SUBSCRIBE}
-    Scroll Element Into View        locator
-    Set Focus To Element    locator
+    [Arguments]                     ${EMAIL_USUARIO}
+    Inserir texto                   ${CAMPO_NEWSLETTER}        ${EMAIL_USUARIO}
+    Clicar no botão                 ${BOTAO_SUBSCRIBE}
+    Scroll Element Into View        ${BOTAO_SUBSCRIBE}
+    Set Focus To Element            ${BOTAO_SUBSCRIBE}
 
 #### QUANDO
 Quando envio o formulário
-    Click Element                   ${BOTAO_REGISTER}
-    Click Element                   ${BOTAO_GENDER}
-    Input Text                      ${CAMPO_FIRSTNAME}          ${USER_FIRSTNAME}
-    Input Text                      ${CAMPO_LASTNAME}           ${USER_LASTNAME}
-    Input Text                      ${CAMPO_EMAIL}              ${USER_EMAIL}
-    Input Text                      ${CAMPO_PASSWORD}           ${USER_PASSWORD}
-    Input Text                      ${CAMPO_PASSWORD2}          ${USER_PASSWORD2}
-    Click Element                   ${BOTAO_SUBMIT_REGISTER}
+    ${EMAIL_ALEATORIO}              FakerLibrary.Email
+    Clicar no botão                 ${BOTAO_REGISTER}
+    Clicar no botão                 ${BOTAO_GENDER}
+    Inserir texto                   ${CAMPO_FIRSTNAME}          ${dados_usuario.nome}
+    Inserir texto                   ${CAMPO_LASTNAME}           ${dados_usuario.sobrenome}
+    Inserir texto                   ${CAMPO_EMAIL}              ${EMAIL_ALEATORIO}
+    Inserir texto                   ${CAMPO_PASSWORD}           ${dados_usuario.senha}
+    Inserir texto                   ${CAMPO_PASSWORD2}          ${dados_usuario.senha}
+    Clicar no botão                 ${BOTAO_SUBMIT_REGISTER}
 
-Quando envio o formulário com meus dados
-    Input Text                      ${CAMPO_FIRSTNAME_ADDRESS}   ${USER_FIRSTNAME}
-    Input Text                      ${CAMPO_LASTNAME_ADDRESS}    ${USER_LASTNAME}
-    Input Text                      ${CAMPO_EMAIL_ADDRESS}       ${USER_EMAIL}
-    Click Element                   ${SELECT_COUNTRY}
-    Input Text                      ${CAMPO_CITY}                ${USER_CITY}
-    Input Text                      ${CAMPO_ADDRESS}             ${USER_ADDRESS}
-    Input Text                      ${CAMPO_PHONE}               ${USER_PHONE}
-    Input Text                      ${CAMPO_ZIP}                 ${USER_ZIP}
-    Click Element                   ${BOTAO_SUBMIT_ADDRESS}
-
-Quando envio meu usuário e senha
-    Input Text                      ${CAMPO_EMAIL}              ${USER_EMAIL}
-    Input Text                      ${CAMPO_PASSWORD}           ${USER_PASSWORD}
-    Click Element                   ${BOTAO_SUBMIT_LOGIN}
+Quando realizo login com minhas credenciais
+    [Arguments]                     ${EMAIL_USUARIO}            ${SENHA}
+    Clicar no botão                 ${BOTAO_LOGIN}
+    Inserir texto                   ${CAMPO_EMAIL}              ${EMAIL_USUARIO}
+    Inserir texto                   ${CAMPO_PASSWORD}           ${SENHA}
+    Clicar no botão                 ${BOTAO_SUBMIT_LOGIN}    
 
 #### ENTÃO
 Então Devo visualizar "${CONFIRM_LOGIN}" no cabeçalho

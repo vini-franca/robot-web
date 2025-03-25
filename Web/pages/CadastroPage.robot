@@ -1,6 +1,6 @@
-*** Variable ***
+*** Variables ***
 ${CABEÇALHO}                xpath=.//img[@alt='Tricentis Demo Web Shop']
-${BOTAO_REGISTER}           class=ico-register
+${BOTAO_REGISTER}           xpath=//a[@href='/register']
 ${BOTAO_ADD}                xpath=.//input[@class='button-1 add-address-button']
 ${BOTAO_LOGIN}              class=ico-login
 ${BOTAO_LOGOUT}             class=ico-logout

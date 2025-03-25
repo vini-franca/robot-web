@@ -1,8 +1,8 @@
 from webdriver_manager.chrome import ChromeDriverManager
-import os
+from selenium.webdriver.chrome.service import Service
+from selenium import webdriver
 
 def setup_chromedriver():
-    # Instala o ChromeDriver e retorna o caminho para ele
-    chromedriver_path = ChromeDriverManager().install()
-    os.environ["webdriver.chrome.driver"] = chromedriver_path
-    return chromedriver_path
+    # Instala o ChromeDriver e retorna o objeto de serviço
+    service = Service(ChromeDriverManager().install())
+    return service
