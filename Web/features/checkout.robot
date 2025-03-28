@@ -4,6 +4,7 @@ Test Teardown    Close Browser
 
 *** Test Cases ***
 Cenário 01: Finalizar compra com pagamento em dinheiro
+    [Tags]  CT-001
     Dado que esteja na tela HOME do site Demo Web Shop
     E faço login com minhas credenciais    ${dados_usuario.email_novo}    ${dados_usuario.senha}
     Quando adiciono um PC ao carrinho
@@ -12,6 +13,7 @@ Cenário 01: Finalizar compra com pagamento em dinheiro
     Então devo receber a mensagem "Your order has been successfully processed!"
 
 Cenário 02: Finalizar compra com pagamento em cheque
+    [Tags]  CT-002
     Dado que esteja na tela HOME do site Demo Web Shop
     E faço login com minhas credenciais    ${dados_usuario.email_ficticio}    ${dados_usuario.senha}
     Quando adiciono um PC ao carrinho
@@ -20,6 +22,7 @@ Cenário 02: Finalizar compra com pagamento em cheque
     Então devo receber a mensagem "Your order has been successfully processed!"
 
 Cenário 03: Finalizar compra com pagamento em cartão de crédito
+    [Tags]  CT-003
     Dado que esteja na tela HOME do site Demo Web Shop
     E faço login com minhas credenciais    ${dados_usuario.email_corporativo}    ${dados_usuario.senha}
     Quando adiciono um PC ao carrinho
@@ -28,6 +31,7 @@ Cenário 03: Finalizar compra com pagamento em cartão de crédito
     Então devo receber a mensagem "Your order has been successfully processed!"
 
 Cenário 04: Finalizar compra com pagamento em ordem de pagamento
+    [Tags]  CT-004
     Dado que esteja na tela HOME do site Demo Web Shop
     E faço login com minhas credenciais    ${dados_usuario.email_pessoal}    ${dados_usuario.senha}
     Quando adiciono um PC ao carrinho

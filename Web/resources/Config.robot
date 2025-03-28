@@ -7,9 +7,9 @@ Resource       ../steps/cadastroSteps.robot
 Resource       ../steps/carrinhoSteps.robot
 Resource       ../steps/checkoutSteps.robot
 Resource       ../steps/validarCadastroSteps.robot
-Resource       ../pages/CarrinhoPage.robot
-Resource       ../pages/CadastroPage.robot
-Resource       ../pages/CheckoutPage.robot
+Resource       ../pages/carrinhoPage.robot
+Resource       ../pages/cadastroPage.robot
+Resource       ../pages/checkoutPage.robot
 Library        SeleniumLibrary
 Library        FakerLibrary  locale=pt_BR
 Library        ../resources/open_chrome.py
